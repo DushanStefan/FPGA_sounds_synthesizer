@@ -3,6 +3,86 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Ignore Vivado generated files and directories
+*.jou
+*.log
+*.str
+*.bin
+*.rpt
+*.pb
+*.xml
+*.html
+*.backup
+*.bxml
+*.wpc
+*.lpr
+
+# Ignore Vivado waveform files
+*.wdf
+
+# Vivado simulation files
+*.wcfg
+*.asdb
+*.xsim
+*.vcd
+*.wdb
+*.log
+*.dat
+xsim.dir/
+
+# Vivado build directories
+project_*/  
+.cache/
+.hw/
+.hw_ila/
+.hw_ip/
+.hw_platform/
+.sim/
+.srcs/
+temp/
+*.runs/
+*.sdk/
+*.ip_user_files/
+
+# Vivado workspace and metadata
+*.xpr
+*.xsa
+*.xpa
+*.bit
+*.bin
+*.ltx
+
+# Constraints and misc
+*.xdc.save
+
+# Generated files
+output_files/
+*.mem
+*.prj
+
+# manually added
+*.bit
+*.bin
+*.tcl
+*.bat
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup and temporary files
+*.bak
+*.tmp
+.~
+
+# IDE-specific files
+.idea/
+*.iml
+*.vscode/
+*.ini
+
+
 # User-specific files
 *.rsuser
 *.suo
@@ -152,12 +232,12 @@ coverage*.info
 *.coveragexml
 
 # NCrunch
-_NCrunch_*
-.*crunch*.local.xml
+NCrunch*
+.crunch.local.xml
 nCrunchTemp_*
 
 # MightyMoose
-*.mm.*
+.mm.
 AutoTest.Net/
 
 # Web workbench (sass)
@@ -197,11 +277,11 @@ PublishScripts/
 # NuGet Symbol Packages
 *.snupkg
 # The packages folder can be ignored because of Package Restore
-**/[Pp]ackages/*
+*/[Pp]ackages/
 # except build/, which is used as an MSBuild target.
-!**/[Pp]ackages/build/
+!/[Pp]ackages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
-#!**/[Pp]ackages/repositories.config
+#!/[Pp]ackages/repositories.config
 # NuGet v3's project.json files produces more ignorable files
 *.nuget.props
 *.nuget.targets
@@ -269,7 +349,7 @@ ServiceFabricBackup/
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout
-*.bim_*.settings
+.bim_.settings
 *.rptproj.rsuser
 *- [Bb]ackup.rdl
 *- [Bb]ackup ([0-9]).rdl
@@ -306,11 +386,11 @@ node_modules/
 *.aps
 
 # Visual Studio LightSwitch build output
-**/*.HTMLClient/GeneratedArtifacts
-**/*.DesktopClient/GeneratedArtifacts
-**/*.DesktopClient/ModelManifest.xml
-**/*.Server/GeneratedArtifacts
-**/*.Server/ModelManifest.xml
+*/.HTMLClient/GeneratedArtifacts
+*/.DesktopClient/GeneratedArtifacts
+*/.DesktopClient/ModelManifest.xml
+*/.Server/GeneratedArtifacts
+*/.Server/ModelManifest.xml
 _Pvt_Extensions
 
 # Paket dependency manager
@@ -324,7 +404,7 @@ paket-files/
 .cr/personal
 
 # Python Tools for Visual Studio (PTVS)
-__pycache__/
+_pycache_/
 *.pyc
 
 # Cake - Uncomment if you are using it
