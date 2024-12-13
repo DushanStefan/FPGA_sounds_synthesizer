@@ -15,6 +15,9 @@ This project is a digital sound generator system implemented on an FPGA. It inte
 
 ## System Architecture
 
+![Top Module Schematic](Documents/top_module_schematic.png)
+
+
 ### Components
 
 1. **Wave Generator (`Wave_Generator.vhd`):**
