@@ -44,7 +44,7 @@ This project is a digital sound generator system implemented on an FPGA. It inte
    - Generates slower clock signals
    - Enables display multiplexing
 
-## Input Interfaces
+### Input Interfaces
 
 The input interfaces of the **Digital Sound Generator** allow users to define the musical characteristics, such as notes, octaves, and sound modes. These interfaces are essential for controlling the behavior of the system and enabling the generation of customized sound outputs. Below is an overview of the input interfaces and their functionalities:
 
@@ -66,7 +66,7 @@ The input interfaces of the **Digital Sound Generator** allow users to define th
 These input interfaces work in unison to provide a rich and flexible platform for audio synthesis, enabling users to produce dynamic musical compositions through simple and intuitive control signals.
 
 
-## Output Interfaces
+### Output Interfaces
 
 The **Digital Sound Generator** provides multiple output interfaces to deliver audio and visual feedback to users. These outputs are crucial for interpreting the system's functionality and engagingly presenting the results. Below are the details of each output interface:
 
@@ -133,28 +133,29 @@ The **Visualization Module** dynamically represents the input sound parameters o
 
 This visualization provides an intuitive and real-time representation of the system's audio output, enhancing user interaction and debugging capabilities.
 
+## Usage
 
-## Hardware Requirements
+### Hardware Requirements
 
 - **FPGA Development Board**: Required to deploy the VHDL-based design.
 - **VGA Monitor**: Used to visualize notes and octaves.
 - **Audio Output Device**: Listen to the generated sound signals.
 
-## Usage
+### Usage
 
 1. **Select Notes**: Use input switches to select the desired musical notes.
 2. **Choose Octave Range**: Adjust the octave using the dedicated inputs.
 3. **Select Wave Mode**: Configure the wave type to produce different timbres.
 4. **Observe Output**: Listen to the generated audio and view the real-time visualization on the VGA display.
 
-## Implementation Notes
+### Implementation Notes
 
 - **Programming Language**: The system is implemented entirely in VHDL.
 - **Standard Libraries**: Utilizes IEEE standard libraries for digital design.
 - **Modular Design**: Organized with component-based architecture for ease of maintenance and scalability.
 - **Real-Time Feedback**: Provides immediate audio and visual feedback based on user input.
 
-## Future Improvements
+### Future Improvements
 
 - **Additional Wave Modes**: Extend the range of available waveforms for more sound variety.
 - **Enhanced Visualization**: Improve the visual representation with more advanced graphics techniques.
