@@ -132,8 +132,8 @@ These output interfaces collectively enable users to interact with the system ef
 - **GitHub Repository:** [Link to Repository](https://github.com/DushanStefan/FPGA_sounds_synthesizer)
 - **Code Organization:**
   - `srcs/sources_1/new` - Contains all VHDL source files.
-  - `srcs/sim_1/new/` - Testbench files for simulation.
-  - `srcs/constrs_1/new/` - XDC files for pin mapping.
+  - `srcs/sim_1/new` - Testbench files for simulation.
+  - `srcs/constrs_1/new` - XDC files for pin mapping.
 
 ---
 
