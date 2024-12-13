@@ -144,6 +144,14 @@ These output interfaces collectively enable users to interact with the system ef
   ![Top Module Schematic](Documents/Segment_divider_module.png)
 - Wave Summation Module
   ![Top Module Schematic](Documents/Wave_summation_module.png)
+- Vga Sync Module
+  ![Top Module Schematic](Documents/Vga_sync_module.png)
+- Clock Divider Module
+  ![Top Module Schematic](Documents/Clock_divider_module.png)
+- Wave Generator Module
+  ![Top Module Schematic](Documents/Wave_generator_module.png)
+- Segment Decoder Module
+  ![Top Module Schematic](Documents/Segment_decoder_module.png)
 
 ---
 
