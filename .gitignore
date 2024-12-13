@@ -20,6 +20,9 @@
 # Ignore Vivado waveform files
 *.wdf
 
+# ip
+*.dcp
+
 # Vivado simulation files
 *.wcfg
 *.asdb
