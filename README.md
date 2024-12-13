@@ -138,10 +138,12 @@ These output interfaces collectively enable users to interact with the system ef
 ---
 
 ### Module-Wise RTL Schematics
-- Clock Wizard
-- Sound Synthesis Module
-- VGA Controller
-- 7-Segment Display Controller
+- Vga Controller module
+  ![Top Module Schematic](Documents/Vga_controller_module.png)
+- Segment Divider Module
+  ![Top Module Schematic](Documents/Segment_divider_module.png)
+- Wave Summation Module
+  ![Top Module Schematic](Documents/Wave_summation_module.png)
 
 ---
 
