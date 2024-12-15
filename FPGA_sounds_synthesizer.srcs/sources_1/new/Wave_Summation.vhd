@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity Wave_Summation is
 Port (  CLK: in std_logic;
         Notes: in std_logic_vector(11 downto 0);
-        Octaves: in std_logic_vector(2 downto 0);
+        Octaves: in std_logic_vector(1 downto 0);
         Modes: in std_logic_vector(4 downto 0);
         output: out std_logic
         );
@@ -50,18 +50,18 @@ begin
     NoteB   : Wave_Generator port map (  Trigger => Notes(11), Mode => Mode, Freq_Count => std_logic_vector(b), Wave_Gen_Clock => CLK, signed(Wave) => WaveB); 
   
   --shift the frequency count based on octaves
-    c <= "1011101010100110" srl to_integer(unsigned(Octaves));
-    cs <= "1011000000100101" srl to_integer(unsigned(Octaves));
-    d <= "1010011001000011" srl to_integer(unsigned(Octaves));
-    ds <= "1001110011110001" srl to_integer(unsigned(Octaves));
-    e <= "1001010000100100" srl to_integer(unsigned(Octaves));
-    f <= "1000101111010100" srl to_integer(unsigned(Octaves));
-    fs <= "1000001111110111" srl to_integer(unsigned(Octaves));
-    g <= "0111110010010000" srl to_integer(unsigned(Octaves));
-    gs <= "0111010110010100" srl to_integer(unsigned(Octaves));
-    a <= "0110111011111001" srl to_integer(unsigned(Octaves));
-    as <= "0110100010111110" srl to_integer(unsigned(Octaves));
-    b <= "0110001011011011" srl to_integer(unsigned(Octaves));
+    c <= "1011101010100110" srl to_integer(unsigned(Octaves)+4);
+    cs <= "1011000000100101" srl to_integer(unsigned(Octaves)+4);
+    d <= "1010011001000011" srl to_integer(unsigned(Octaves)+4);
+    ds <= "1001110011110001" srl to_integer(unsigned(Octaves)+4);
+    e <= "1001010000100100" srl to_integer(unsigned(Octaves)+4);
+    f <= "1000101111010100" srl to_integer(unsigned(Octaves)+4);
+    fs <= "1000001111110111" srl to_integer(unsigned(Octaves)+4);
+    g <= "0111110010010000" srl to_integer(unsigned(Octaves)+4);
+    gs <= "0111010110010100" srl to_integer(unsigned(Octaves)+4);
+    a <= "0110111011111001" srl to_integer(unsigned(Octaves)+4);
+    as <= "0110100010111110" srl to_integer(unsigned(Octaves)+4);
+    b <= "0110001011011011" srl to_integer(unsigned(Octaves)+4);--increase pitch by 4
     
     with Modes select Mode <=   
         "001" when "10000",

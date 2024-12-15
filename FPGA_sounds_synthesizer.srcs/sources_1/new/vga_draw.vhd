@@ -12,7 +12,7 @@ entity vga_draw is
     vc     : in  std_logic_vector(10 downto 0);
     red    : out std_logic_vector(3 downto 0);
     blue   : out std_logic_vector(3 downto 0);
-     octaves : in std_logic_vector(2 downto 0);
+     octaves : in std_logic_vector(1 downto 0);
     green  : out std_logic_vector(3 downto 0)
   );
 end vga_draw;
@@ -53,34 +53,23 @@ begin
         blue <= "0000";
       else
         -- Color cells based on "notes" and "octaves"
-        if notes(row mod 12) = '1' and (octaves = "001") then
+        if notes(row mod 12) = '1' and (octaves = "00") then
           red <= "1111";  -- Highlighted cell color
           green <= "0000";
           blue <= "0000";
-        elsif notes(row mod 12) = '1' and (octaves = "010") then
+        elsif notes(row mod 12) = '1' and (octaves = "01") then
           red <= "0000";  -- Highlighted cell color
           green <= "1111";
           blue <= "0000";
-        elsif notes(row mod 12) = '1' and (octaves = "011") then
+        elsif notes(row mod 12) = '1' and (octaves = "11") then
           red <= "0000";  -- Highlighted cell color
           green <= "0000";
           blue <= "1111";
-        elsif notes(row mod 12) = '1' and (octaves = "100") then
+        elsif notes(row mod 12) = '1' and (octaves = "10") then
           red <= "1111";  -- Highlighted cell color
           green <= "1111";
           blue <= "0000";
-        elsif notes(row mod 12) = '1' and (octaves = "101") then
-          red <= "1111";  -- Highlighted cell color
-          green <= "1010";
-          blue <= "0000";
-        elsif notes(row mod 12) = '1' and (octaves = "110") then
-          red <= "1000";  -- Highlighted cell color
-          green <= "0000";
-          blue <= "1000";
-        elsif notes(row mod 12) = '1' and (octaves = "111") then
-          red <= "1111";  -- Highlighted cell color
-          green <= "0000";
-          blue <= "1111";
+
         else
           red <= "1111";  -- Default grid cell color
           green <= "1111";
