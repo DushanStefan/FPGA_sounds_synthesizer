@@ -62,11 +62,13 @@ The **Digital Sound Generator** provides multiple output interfaces to deliver a
 
 3. **VGA Output**  
    - **Components**:  
-     - **Horizontal Sync (hsync)**: Synchronizes the display's horizontal scan.  
-     - **Vertical Sync (vsync)**: Synchronizes the display's vertical refresh rate.  
-     - **RGB Color Signals**: 4-bit per channel for red, green, and blue colors, allowing the generation of up to 4,096 unique colors.  
-   - **Description**: Provides a graphical representation of the sound synthesis process, displaying information like waveforms, notes, and modes on a VGA monitor.  
-   - **Functionality**: Enhances the user experience by offering a visual representation of audio outputs and system activity.
+     - **clk**: Clock signal driving the VGA controller and synchronizing all operations.  
+     - **notes**: A 12-bit input specifying the active musical notes for visual representation. 
+     - **octaves**: A 3-bit input defining the octave range of the active notes.
+     - **hsync & vsync**: Output synchronization signals for horizontal and vertical scanning.
+     - **RGB Outputs (red, green, blue)**: 4-bit color signals used to generate the display colors on the VGA monitor.
+   - **Description**:Integrates the VGA synchronization and drawing logic. It serves as the main interface for the VGA display system, connecting the clock and input signals (notes and octaves) to the submodules and outputting synchronization signals (hsync and vsync) along with RGB color values.  
+   - **Functionality**: Ensures proper timing and alignment of the active display region, and creates a dynamic grid of colors that visualize the notes and octaves. Together, they produce a visually engaging and synchronized display for the sound synthesis process.
 
 These output interfaces collectively enable users to interact with the system effectively, delivering both auditory and visual feedback for a comprehensive experience.
 
