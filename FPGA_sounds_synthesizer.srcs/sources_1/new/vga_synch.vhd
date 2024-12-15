@@ -23,7 +23,7 @@ constant hfp : std_logic_vector (10 downto 0) := "11001101000"; --1640
 constant vfp : std_logic_vector (10 downto 0) := "10000101001"; --1065
 signal hcs : std_logic_vector (10 downto 0);
 signal vcs : std_logic_vector (10 downto 0);
-signal vsenable : std_logic;
+signal vsenable : std_logic;  --for store whether current pixel is in horizontally end or not
 
 begin
 process(clock, clear)
