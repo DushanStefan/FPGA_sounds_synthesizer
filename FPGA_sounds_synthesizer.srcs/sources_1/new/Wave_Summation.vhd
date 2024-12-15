@@ -36,6 +36,7 @@ architecture Behavioral of Wave_Summation is
 begin
     
     NoteC   : Wave_Generator port map (  Trigger => Notes(0), Mode => Mode, Freq_Count => std_logic_vector(c), Wave_Gen_Clock => CLK, signed(Wave) => WaveC); 
+    --output 10 bit signed magnitude after each clock cycle
     NoteCs  : Wave_Generator port map (  Trigger => Notes(1), Mode => Mode, Freq_Count => std_logic_vector(cs), Wave_Gen_Clock => CLK, signed(Wave) => WaveCs);
     NoteD   : Wave_Generator port map (  Trigger => Notes(2), Mode => Mode, Freq_Count => std_logic_vector(d), Wave_Gen_Clock => CLK, signed(Wave) => WaveD); 
     NoteDs  : Wave_Generator port map (  Trigger => Notes(3), Mode => Mode, Freq_Count => std_logic_vector(ds), Wave_Gen_Clock => CLK, signed(Wave) => WaveDs);
@@ -48,6 +49,7 @@ begin
     NoteAs  : Wave_Generator port map (  Trigger => Notes(10), Mode => Mode, Freq_Count => std_logic_vector(as), Wave_Gen_Clock => CLK, signed(Wave) => WaveAs);
     NoteB   : Wave_Generator port map (  Trigger => Notes(11), Mode => Mode, Freq_Count => std_logic_vector(b), Wave_Gen_Clock => CLK, signed(Wave) => WaveB); 
   
+  --shift the frequency count based on octaves
     c <= "1011101010100110" srl to_integer(unsigned(Octaves));
     cs <= "1011000000100101" srl to_integer(unsigned(Octaves));
     d <= "1010011001000011" srl to_integer(unsigned(Octaves));
@@ -67,12 +69,12 @@ begin
         "011" when "00100",
         "100" when "00010",
         "101" when "00001",
-        "000" when others;
+        "000" when others; ---sine (without press any button)
         
     Wave_Sum <= std_logic_vector((WaveC + WaveCs + WaveD + WaveDs + WaveE + WaveF + WaveFs + WaveG + WaveGs + WaveA + WaveAs + WaveB));
     
-    Positive_Wave_Sum <= not Wave_Sum(9) & Wave_Sum(8 downto 0);
-    
+    Positive_Wave_Sum <= not Wave_Sum(9) & Wave_Sum(8 downto 0);  --    10-bit signed signal (Wave_Sum) to convert it into a 10-bit unsigned signal (Positive_Wave_Sum).
+    --concatenating
     process(CLK)
         begin
         if (rising_edge(CLK)) then
