@@ -186,7 +186,9 @@ These output interfaces collectively enable users to interact with the system ef
 ---
 
 ### Discussion
-The project successfully demonstrated the synthesis of audio signals with real-time visualization and data display. The modular design ensured scalability and ease of debugging. Challenges included tuning the VGA synchronization and ensuring minimal jitter in audio signals.
+The primary objective of this project was to create a sound-generating system using a Basys3 FPGA board and VHDL programming. The system employs Pulse Width Modulation (PWM) to generate tones, and button inputs allow the user to control the sound frequencies. The implementation successfully generated variable-frequency PWM signals based on button inputs, enabling distinct tones to be produced. The key modules included a clock divider to reduce the 100 MHz system clock for tone generation, a PWM generator for square wave production, and button control logic to map user inputs to specific frequencies. Observations revealed the design’s ability to produce audible sounds, with accurate pin mapping and responsive user controls enhancing functionality.
+
+Several challenges were encountered, notably the insufficient output voltage from the FPGA’s GPIO pins to directly drive a speaker, resulting in low sound volume. Issues with pin assignments required careful verification and debugging complexities such as the absence of a free-running clock added to the implementation difficulties. To address these, incorporating an external amplifier is recommended to boost the signal and drive the speaker effectively. Additionally, integrating a Digital-to-Analog Converter (DAC) for smoother sine waveforms and expanding the button logic to enable melody generation could significantly improve the system’s audio quality and functionality. Future developments could extend this work into educational tools, embedded audio systems, or signal processing applications, showcasing the versatility and potential of FPGA-based sound generation systems.
 
 ---
 
@@ -204,6 +206,7 @@ The project successfully demonstrated the synthesis of audio signals with real-t
 - Integrate MIDI input for advanced sound control.
 - Add more sophisticated audio synthesis algorithms.
 - Enhance VGA visualization with dynamic animations.
+- Implement a sophisticated DAC.
 
 ---
 
