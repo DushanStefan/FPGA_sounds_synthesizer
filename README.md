@@ -117,6 +117,12 @@ These output interfaces collectively enable users to interact with the system ef
   - Verified timing and output correctness in simulation.
   - Observed accurate waveforms for audio signals.
 
+
+    - Wave Generator
+    ![Top Module Schematic](Documents/wave_generator_tb.png)
+    - Wave Summation
+    ![Top Module Schematic](Documents/wave_summation_tb.png)
+   
   [demo](Documents/demo.mp4)
 
 ---
