@@ -119,7 +119,6 @@ These output interfaces collectively enable users to interact with the system ef
 
   [demo](Documents/demo.mp4)
 
-
 ---
 
 ### Hardware Implementation and Results
