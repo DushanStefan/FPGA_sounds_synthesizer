@@ -16,7 +16,7 @@ This project is a digital sound generator system implemented on an FPGA. It inte
   - Basys3 FPGA development board for hardware implementation.
   - External VGA monitor and speakers for output verification.
 - **Testing Strategy:**
-  - Unit testing of individual modules such as clock generation, PWM, and VGA controller.
+  - Unit testing of individual modules such as Wave_summation_module & Wave_generator_module.
   - Functional testing with input vectors for all features.
   - Hardware testing to verify real-time functionality.
 
