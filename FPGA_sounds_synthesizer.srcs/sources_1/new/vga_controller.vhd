@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity vga_controller is
     Port (  clk : in std_logic;
             notes: in std_logic_vector(11 downto 0);
-            octaves : in std_logic_vector(2 downto 0);
+            octaves : in std_logic_vector(1 downto 0);
             hsync : out std_logic;
             vsync : out std_logic;
             red : out std_logic_vector(3 downto 0);
@@ -27,7 +27,7 @@ architecture Behavioral of vga_controller is
         Port (vidon : in std_logic;
               clk : in std_logic;
               notes : in std_logic_vector(11 downto 0);
-              octaves : in std_logic_vector(2 downto 0);
+              octaves : in std_logic_vector(1 downto 0);
               hc :  in std_logic_vector(10 downto 0);
               vc :  in std_logic_vector(10 downto 0);
               red :  out std_logic_vector(3 downto 0);
