@@ -119,7 +119,7 @@ begin
         "01000" when "01",
         "01001" when "10",
         "01010" when "11",
-        
+
         "11111" when others;
     
     with Notes select seven_seg_input <=
@@ -135,6 +135,7 @@ begin
         seven_seg_oct & "10000" & "00000" & "11111" when "001000000000",
         seven_seg_oct & "01111" & "00000" & "11111" when "010000000000",
         seven_seg_oct & "10000" & "00001" & "11111" when "100000000000",
-        seven_seg_oct & "111111111111111" when others;    --when press multiple notes at once,segment dowsn't show anything
+        seven_seg_oct & "111111111111111" when "000000000000",
+        seven_seg_oct & "11111" & "11111" & "01110" when others;    --when press multiple notes at once,show x
               
 end Behavioral;
