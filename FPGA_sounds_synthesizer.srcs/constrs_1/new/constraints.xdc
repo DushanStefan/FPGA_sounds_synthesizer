@@ -1,8 +1,3 @@
-# Clock signal
-set_property PACKAGE_PIN W5 [get_ports CLK]							
-	set_property IOSTANDARD LVCMOS33 [get_ports CLK]
-	create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports CLK]
- 
 # Switches
 set_property PACKAGE_PIN V17 [get_ports {Notes[11]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {Notes[11]}]
@@ -28,14 +23,30 @@ set_property PACKAGE_PIN T2 [get_ports {Notes[1]}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {Notes[1]}]
 set_property PACKAGE_PIN R3 [get_ports {Notes[0]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {Notes[0]}]
-set_property PACKAGE_PIN W2 [get_ports {Octaves[0]}]					
+#set_property PACKAGE_PIN W2 [get_ports {Octaves[0]}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {Octaves[0]}]
+
+
+#octaves
+set_property PACKAGE_PIN U1 [get_ports {Octaves[0]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {Octaves[0]}]
-set_property PACKAGE_PIN U1 [get_ports {Octaves[1]}]					
+set_property PACKAGE_PIN T1 [get_ports {Octaves[1]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {Octaves[1]}]
-set_property PACKAGE_PIN T1 [get_ports {Octaves[2]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {Octaves[2]}]
 #set_property PACKAGE_PIN R2 [get_ports {sw[15]}]					
 #	set_property IOSTANDARD LVCMOS33 [get_ports {sw[15]}]
+
+
+###Buttons
+set_property PACKAGE_PIN U18 [get_ports Modes[0]]						
+	set_property IOSTANDARD LVCMOS33 [get_ports Modes[0]]
+set_property PACKAGE_PIN T18 [get_ports Modes[1]]						
+	set_property IOSTANDARD LVCMOS33 [get_ports Modes[1]]
+set_property PACKAGE_PIN W19 [get_ports Modes[2]]						
+	set_property IOSTANDARD LVCMOS33 [get_ports Modes[2]]
+set_property PACKAGE_PIN T17 [get_ports Modes[3]]						
+	set_property IOSTANDARD LVCMOS33 [get_ports Modes[3]]
+set_property PACKAGE_PIN U17 [get_ports Modes[4]]						
+	set_property IOSTANDARD LVCMOS33 [get_ports Modes[4]]
 
 #7 segment display
 set_property PACKAGE_PIN W7 [get_ports {seven_segment_display[0]}]					
@@ -65,18 +76,6 @@ set_property PACKAGE_PIN V4 [get_ports {seven_segment_display[9]}]
 set_property PACKAGE_PIN W4 [get_ports {seven_segment_display[10]}]				
 	set_property IOSTANDARD LVCMOS33 [get_ports {seven_segment_display[10]}]
 
-
-###Buttons
-set_property PACKAGE_PIN U18 [get_ports Modes[0]]						
-	set_property IOSTANDARD LVCMOS33 [get_ports Modes[0]]
-set_property PACKAGE_PIN T18 [get_ports Modes[1]]						
-	set_property IOSTANDARD LVCMOS33 [get_ports Modes[1]]
-set_property PACKAGE_PIN W19 [get_ports Modes[2]]						
-	set_property IOSTANDARD LVCMOS33 [get_ports Modes[2]]
-set_property PACKAGE_PIN T17 [get_ports Modes[3]]						
-	set_property IOSTANDARD LVCMOS33 [get_ports Modes[3]]
-set_property PACKAGE_PIN U17 [get_ports Modes[4]]						
-	set_property IOSTANDARD LVCMOS33 [get_ports Modes[4]]
  
 ##PWM Output
 set_property PACKAGE_PIN N1 [get_ports {output}]				
@@ -107,7 +106,15 @@ set_property PACKAGE_PIN G17 [get_ports {green[2]}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {green[2]}]
 set_property PACKAGE_PIN D17 [get_ports {green[3]}]				
 	set_property IOSTANDARD LVCMOS33 [get_ports {green[3]}]
+	
+	
 set_property PACKAGE_PIN P19 [get_ports hsync]						
 	set_property IOSTANDARD LVCMOS33 [get_ports hsync]
 set_property PACKAGE_PIN R19 [get_ports vsync]						
 	set_property IOSTANDARD LVCMOS33 [get_ports vsync]
+	
+	
+# Clock signal
+    set_property PACKAGE_PIN W5 [get_ports CLK]                            
+        set_property IOSTANDARD LVCMOS33 [get_ports CLK]
+        create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports CLK]

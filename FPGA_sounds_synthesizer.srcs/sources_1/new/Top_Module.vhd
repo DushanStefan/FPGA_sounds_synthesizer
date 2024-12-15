@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Top_Module is
   Port ( CLK: in std_logic;
          Notes : in STD_LOGIC_VECTOR(11 downto 0);
-         Octaves : in STD_LOGIC_VECTOR(2 downto 0);
+         Octaves : in STD_LOGIC_VECTOR(1 downto 0);
          Modes : in STD_LOGIC_VECTOR(4 DOWNTO 0);
          seven_segment_display : out std_logic_vector(10 downto 0);
          output : out std_logic;
@@ -19,7 +19,7 @@ architecture Behavioral of Top_Module is
     component Wave_Summation is
     Port (  CLK: in std_logic;
             Notes: in std_logic_vector(11 downto 0);
-            Octaves: in std_logic_vector(2 downto 0);
+            Octaves: in std_logic_vector(1 downto 0);
             Modes : in std_logic_vector(4 downto 0);
             output: out std_logic);
     end component;
@@ -46,7 +46,7 @@ architecture Behavioral of Top_Module is
     component vga_controller is
         Port (  clk : in std_logic;
                 notes: in std_logic_vector(11 downto 0);
-                octaves : in std_logic_vector(2 downto 0);
+                octaves : in std_logic_vector(1 downto 0);
                 hsync : out std_logic;
                 vsync : out std_logic;
                 red : out std_logic_vector(3 downto 0);
@@ -107,7 +107,7 @@ begin
         blue => blue
     );
     
-    uut4 : clk_wiz_0 Port Map(
+    uut4 : clk_wiz_0 Port Map(    --for vga controller
         clk_out1 => clk108Mhz,
         reset => '0',
         locked => locked,
@@ -115,14 +115,11 @@ begin
     );
     
     with Octaves  select seven_seg_oct <=
-        "00111" when "000",
-        "01000" when "001",
-        "01001" when "010",
-        "01010" when "011",
-        "01011" when "100",
-        "01100" when "101",
-        "01101" when "110",
-        "01110" when "111",
+        "00111" when "00",
+        "01000" when "01",
+        "01001" when "10",
+        "01010" when "11",
+
         "11111" when others;
     
     with Notes select seven_seg_input <=
@@ -138,6 +135,7 @@ begin
         seven_seg_oct & "10000" & "00000" & "11111" when "001000000000",
         seven_seg_oct & "01111" & "00000" & "11111" when "010000000000",
         seven_seg_oct & "10000" & "00001" & "11111" when "100000000000",
-        seven_seg_oct & "111111111111111" when others;
+        seven_seg_oct & "111111111111111" when "000000000000",
+        seven_seg_oct & "11111" & "11111" & "01110" when others;    --when press multiple notes at once,show x
               
 end Behavioral;
