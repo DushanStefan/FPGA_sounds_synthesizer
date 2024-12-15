@@ -117,6 +117,9 @@ These output interfaces collectively enable users to interact with the system ef
   - Verified timing and output correctness in simulation.
   - Observed accurate waveforms for audio signals.
 
+  [demo](Documents/demo.mp4)
+
+
 ---
 
 ### Hardware Implementation and Results
