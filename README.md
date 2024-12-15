@@ -158,11 +158,23 @@ These output interfaces collectively enable users to interact with the system ef
 ---
 
 ### Constraints and Timing Analysis
-- **Constraints:**
-  - XDC file used for mapping input switches and output pins.
-- **Timing Analysis:**
-  - Met all timing requirements with no violations.
-
+- **Setup**
+  - **Worst Negative Slack (WNS):** 2.876 ns  
+  - **Total Negative Slack (TNS):** 0.000 ns  
+  - **Number of Failing Endpoints:** 0  
+  - **Total Number of Endpoints:** 791  
+- **Hold**
+  - **Worst Hold Slack (WHS):** 0.212 ns  
+  - **Total Hold Slack (THS):** 0.000 ns  
+  - **Number of Failing Endpoints:** 0  
+  - **Total Number of Endpoints:** 791 
+- **Pulse Width**
+  - **Worst Pulse Width Slack (WPWS):** 3.000 ns  
+  - **Total Pulse Width Negative Slack (TPWS):** 0.000 ns  
+  - **Number of Failing Endpoints:** 0  
+  - **Total Number of Endpoints:** 427
+ 
+  The timing analysis report shows that all timing constraints for the FPGA design are successfully met. The setup timing has a worst negative slack (WNS) of 2.876 ns, indicating that the setup timing requirements are satisfied with sufficient margin. Similarly, the hold timing is also met with a worst hold slack (WHS) of 0.212 ns, meaning there are no hold violations. In terms of pulse width, the worst pulse width slack (WPWS) is 3.000 ns, ensuring the pulse widths are within the required range. Overall, there are no failing endpoints in any of the timing checks, and all user-specified timing constraints are met, indicating that the design is functioning as expected without any timing issues.
 ---
 
 ### Discussion
