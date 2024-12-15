@@ -123,8 +123,6 @@ These output interfaces collectively enable users to interact with the system ef
     - Wave Summation
     ![Top Module Schematic](Documents/wave_summation_tb.png)
    
-  [demo](Documents/demo.mp4)
-
 ---
 
 ### Hardware Implementation and Results
@@ -135,6 +133,8 @@ These output interfaces collectively enable users to interact with the system ef
   - Successful audio playback for selected notes.
   - Clear VGA visualization with red-highlighted active notes.
   - Correct real-time data display on 7-segment displays.
+
+    [demo](Documents/demo.mp4)
 
 ---
 
