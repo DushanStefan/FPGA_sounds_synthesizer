@@ -8,7 +8,7 @@ entity vga_synch is
          clear : in std_logic;
          hsync : out std_logic;
          vsync : out std_logic;
-         vidon : out std_logic;
+         vidon : out std_logic; --to check current pixel is in visible range or not
          hc :  out std_logic_vector(10 downto 0);
          vc :  out std_logic_vector(10 downto 0));
 end vga_synch;
