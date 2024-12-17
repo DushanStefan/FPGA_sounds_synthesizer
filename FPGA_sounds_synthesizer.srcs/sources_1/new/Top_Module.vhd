@@ -62,7 +62,6 @@ architecture Behavioral of Top_Module is
     end component;
     
     signal seven_seg_oct : std_logic_vector(4 downto 0);
-    signal koutput : std_logic_vector(10 downto 0);
     signal seven_seg_input : std_logic_vector(19 downto 0);
     signal clk108Mhz : std_logic;
     signal locked : std_logic;
