@@ -34,7 +34,7 @@ The input interfaces of the **Digital Sound Generator** allow users to define th
    - **Functionality**: Enables users to select the musical notes they want to play. Multiple notes can be activated simultaneously for chord synthesis.
 
 2. **Octaves**  
-   - **Type**: 1-bit vector  
+   - **Type**: 2-bit vector  
    - **Description**: Represents the octave range, allowing users to specify which octave (0–1) the selected notes belong to.  
    - **Functionality**: Changes the pitch of the notes, shifting them higher or lower across octaves. This ensures versatility in creating sounds ranging from bass to treble.  
 

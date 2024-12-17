@@ -6,7 +6,6 @@ use IEEE.NUMERIC_STD.ALL;
 entity vga_draw is
   Port (
     vidon  : in  std_logic;
-    clk    : in  std_logic;
     notes  : in  std_logic_vector(11 downto 0);
     hc     : in  std_logic_vector(10 downto 0);
     vc     : in  std_logic_vector(10 downto 0);

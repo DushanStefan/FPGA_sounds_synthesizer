@@ -62,7 +62,6 @@ architecture Behavioral of Top_Module is
     end component;
     
     signal seven_seg_oct : std_logic_vector(4 downto 0);
-    signal koutput : std_logic_vector(10 downto 0);
     signal seven_seg_input : std_logic_vector(19 downto 0);
     signal clk108Mhz : std_logic;
     signal locked : std_logic;
@@ -121,6 +120,7 @@ begin
         "01010" when "11",
 
         "11111" when others;
+    
     
     with Notes select seven_seg_input <=
         seven_seg_oct & "10000" & "00010" & "11111" when "000000000001",
