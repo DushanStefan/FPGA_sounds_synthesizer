@@ -113,13 +113,11 @@ begin
         clk_in1 => clk 
     );
     
-    with Octaves  select seven_seg_oct <=
-        "00111" when "00",
-        "01000" when "01",
-        "01001" when "10",
-        "01010" when "11",
-
-        "11111" when others;
+    with Octaves select seven_seg_oct <=
+        "00111" when '0',
+        "01000" when '1', -- remove 01001 and 01010
+        "11111" when others; -- when octave is 0,1,show 7,8,otherwise show x
+    
     
     with Notes select seven_seg_input <=
         seven_seg_oct & "10000" & "00010" & "11111" when "000000000001",
