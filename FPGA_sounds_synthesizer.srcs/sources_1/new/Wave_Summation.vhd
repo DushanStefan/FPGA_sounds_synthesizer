@@ -22,7 +22,7 @@ architecture Behavioral of Wave_Summation is
     
     -- For notes
     signal  WaveC, WaveCs, WaveD, WaveDs, WaveE, WaveF, WaveFs, WaveG, WaveGs, WaveA, WaveAs, WaveB : signed(9 downto 0);
-    signal c, cs, d, ds, e, f, fs, g, gs, a, as, b : unsigned(15 downto 0);
+    signal c, cs, d, ds, e, f, fs, g, gs, a, as, b, tmp : unsigned(15 downto 0);
     signal Mode : std_logic_vector(2 downto 0);
     
     -- For Wave Summation
@@ -35,19 +35,19 @@ architecture Behavioral of Wave_Summation is
     
 begin
     
-    NoteC   : Wave_Generator port map (  Trigger => Notes(0), Mode => Mode, Freq_Count => std_logic_vector(c), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveC)); 
+    NoteC   : Wave_Generator port map (  Trigger => Notes(0), Mode => Mode, Freq_Count => std_logic_vector(c), Wave_Gen_Clock => CLK, signed(Wave) => WaveC); 
     --output 10 bit signed magnitude after each clock cycle
-    NoteCs  : Wave_Generator port map (  Trigger => Notes(1), Mode => Mode, Freq_Count => std_logic_vector(cs), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveCs));
-    NoteD   : Wave_Generator port map (  Trigger => Notes(2), Mode => Mode, Freq_Count => std_logic_vector(d), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveD)); 
-    NoteDs  : Wave_Generator port map (  Trigger => Notes(3), Mode => Mode, Freq_Count => std_logic_vector(ds), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveDs));
-    NoteE   : Wave_Generator port map (  Trigger => Notes(4), Mode => Mode, Freq_Count => std_logic_vector(e), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveE)); 
-    NoteF   : Wave_Generator port map (  Trigger => Notes(5), Mode => Mode, Freq_Count => std_logic_vector(f), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveF)); 
-    NoteFs  : Wave_Generator port map (  Trigger => Notes(6), Mode => Mode, Freq_Count => std_logic_vector(fs), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveFs));
-    NoteG   : Wave_Generator port map (  Trigger => Notes(7), Mode => Mode, Freq_Count => std_logic_vector(g), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveG)); 
-    NoteGs  : Wave_Generator port map (  Trigger => Notes(8), Mode => Mode, Freq_Count => std_logic_vector(gs), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveGs));
-    NoteA   : Wave_Generator port map (  Trigger => Notes(9), Mode => Mode, Freq_Count => std_logic_vector(a), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveA)); 
-    NoteAs  : Wave_Generator port map (  Trigger => Notes(10), Mode => Mode, Freq_Count => std_logic_vector(as), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveAs));
-    NoteB   : Wave_Generator port map (  Trigger => Notes(11), Mode => Mode, Freq_Count => std_logic_vector(b), Wave_Gen_Clock => CLK, Wave => std_logic_vector(WaveB)); 
+    NoteCs  : Wave_Generator port map (  Trigger => Notes(1), Mode => Mode, Freq_Count => std_logic_vector(cs), Wave_Gen_Clock => CLK, signed(Wave) => WaveCs);
+    NoteD   : Wave_Generator port map (  Trigger => Notes(2), Mode => Mode, Freq_Count => std_logic_vector(d), Wave_Gen_Clock => CLK, signed(Wave) => WaveD); 
+    NoteDs  : Wave_Generator port map (  Trigger => Notes(3), Mode => Mode, Freq_Count => std_logic_vector(ds), Wave_Gen_Clock => CLK, signed(Wave) => WaveDs);
+    NoteE   : Wave_Generator port map (  Trigger => Notes(4), Mode => Mode, Freq_Count => std_logic_vector(e), Wave_Gen_Clock => CLK, signed(Wave) => WaveE); 
+    NoteF   : Wave_Generator port map (  Trigger => Notes(5), Mode => Mode, Freq_Count => std_logic_vector(f), Wave_Gen_Clock => CLK, signed(Wave) => WaveF); 
+    NoteFs  : Wave_Generator port map (  Trigger => Notes(6), Mode => Mode, Freq_Count => std_logic_vector(fs), Wave_Gen_Clock => CLK, signed(Wave) => WaveFs);
+    NoteG   : Wave_Generator port map (  Trigger => Notes(7), Mode => Mode, Freq_Count => std_logic_vector(g), Wave_Gen_Clock => CLK, signed(Wave) => WaveG); 
+    NoteGs  : Wave_Generator port map (  Trigger => Notes(8), Mode => Mode, Freq_Count => std_logic_vector(gs), Wave_Gen_Clock => CLK, signed(Wave) => WaveGs);
+    NoteA   : Wave_Generator port map (  Trigger => Notes(9), Mode => Mode, Freq_Count => std_logic_vector(a), Wave_Gen_Clock => CLK, signed(Wave) => WaveA); 
+    NoteAs  : Wave_Generator port map (  Trigger => Notes(10), Mode => Mode, Freq_Count => std_logic_vector(as), Wave_Gen_Clock => CLK, signed(Wave) => WaveAs);
+    NoteB   : Wave_Generator port map (  Trigger => Notes(11), Mode => Mode, Freq_Count => std_logic_vector(b), Wave_Gen_Clock => CLK, signed(Wave) => WaveB); 
   
   --shift the frequency count based on octaves
     c <= "1011101010100110" srl to_integer(unsigned(Octaves)+4);
